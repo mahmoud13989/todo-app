@@ -42,7 +42,7 @@ formElement.addEventListener('submit', async function (e) {
     }
     console.log(userObj)
 
-    const response = await sendXMLHttpRequest("http://localhost:7000/signup", 'POST', userObj);
+    const response = await sendXMLHttpRequest(`${config.url}/signup`, 'POST', userObj);
     console.log('redirectiong to logIn page')
     window.location.href = "/frontend/login/login.html";
 

@@ -12,14 +12,14 @@ app.use(express.static('frontend'));
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-
+app.get('/healthcheck', (_, res) => res.send("Still there..."))
 app.use(userRouter);
 app.use('/tasks',auth,taskRouter);
 
 
 
-app.listen(7000, () => {
-    console.log('server initiated on port 7000')
+app.listen(3000, () => {
+    console.log('server initiated on port 3000')
 })
 
 
