@@ -8,13 +8,13 @@ const taskRouter = require('./src/routers/tasksRouter')
 const { auth } = require('./src/utilities/middlewares');
 
 
-app.use(express.static('frontend'));
+// app.use(express.static('frontend'));
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/healthcheck', (_, res) => res.send("Still there..."))
 app.use(userRouter);
-app.use('/tasks',auth,taskRouter);
+app.use('/tasks', auth, taskRouter);
 
 
 

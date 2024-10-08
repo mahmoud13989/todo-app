@@ -7,9 +7,11 @@ const { login } = require('../users/login');
 const { refreshToken } = require('../users/refreshToken');
 
 userRouter.post('/signup', validateUser, registerUser);
+// Wrong GET http://localhost:3000/register(?) --> getAllUsers
+// Right GET http://localhost:3000/user --> getAllUsers
 userRouter.get('/register', getAllUsers);
-userRouter.delete('/register', deleteUser)
-userRouter.put('/register', updateUser)
+userRouter.delete('/user', deleteUser)
+userRouter.put('/user', updateUser)
 userRouter.post('/login', login);
-userRouter.post('/refresh_token',refreshToken)
+userRouter.post('/refresh-token', refreshToken)
 module.exports = userRouter;

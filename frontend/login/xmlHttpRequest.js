@@ -1,4 +1,8 @@
 function xhRequest(method, url, title = null, newTitle = null, token = null) {
+    return fetch({
+        method,
+        url,
+    });
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url);
@@ -19,6 +23,10 @@ function xhRequest(method, url, title = null, newTitle = null, token = null) {
         }
 
         xhr.send(data);
+
+        xhr.addEventListener('readystatechange', () => {
+
+        });
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
