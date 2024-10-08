@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/css/style.css">
+    <title>To-Dos</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1 class="headers">Signup page</h1>
+        <form id="signup-form"  action="javascript:void(0);">
+            <input type="text" placeholder="Enter First Name" id="first-name-input" />
+            <input type="text" placeholder="Enter Last Name" id="last-name-input" />
+            <input type="text" placeholder="Enter Email" id="email-input" />
+            <input type="text" placeholder="Enter Password" id="password-input" />
+            <input type="text" placeholder="Password Confirmation" id="passwordConfirmation-input" />
+
+            <div id="error-messages"></div>
+            <button type="submit" id="submit-all-inputs">submit</button>
+        </form>
+    </div>
+    <script src="../config.js"></script>
+    <script src="register.js"></script>
+</body>
+
+</html>
