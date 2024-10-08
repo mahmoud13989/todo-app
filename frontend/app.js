@@ -126,14 +126,19 @@ async function getAllTasks() {
         (
           state,
           task
-        ) => `${state}<li id="li${task.id}">${task.title} <button  onclick = "updateLi('${task.id}','newTitle')"  id="editBtn${task.id}" >Edit</button></li>
+        ) => `${state}<li id="li${task.id}">${task.title} <button onclick = "updateLi('${task.id}','newTitle')" id="editBtn${task.id}" >Edit</button></li>
                     <input id="${task.id}" class="hidden gowun-batang-bold" value="${task.title}"> <button class="hidden" id="cancel${task.id}">Cancel</button><button class="hidden" id="update${task.id}">Update</button> <button class="hidden" id='delete.${task.id}'>Delete Task</button>`,
         ""
       );
     }
   } catch (exc) {
     console.error(`Error occured while fetching data: `, exc);
-    taskListElements.innerHTML = `<li>Erorr Cannot load data<li>`;
+    // taskListElements.innerHTML = `<li>Erorr Cannot load data<li>`;
+
+    taskListElements.remove()
+    const p = document.createElement('p');
+    p.textContent = exc.message || 'Error Cannot load data';
+    appElement.appendChild(p);
   }
 }
 

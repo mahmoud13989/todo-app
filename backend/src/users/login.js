@@ -6,7 +6,7 @@ const loginResposeDto = (access_token, refresh_token) => ({ access_token, refres
 module.exports = {
     async login(req, res) {
         const credentials = req.body;
-        console.log({credentials})
+        console.log({ credentials })
         const user = await usersRepo.getOneBy({ email: credentials.email })
         if (!user) {
             return res.status(401).send({ message: 'Invalid Email or Password' })

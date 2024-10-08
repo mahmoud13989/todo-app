@@ -2,6 +2,10 @@ function xhRequest(method, url, title = null, newTitle = null, token = null) {
     return fetch({
         method,
         url,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
     });
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
